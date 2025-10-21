@@ -1,0 +1,28 @@
+---
+import Button from "./Button.astro"
+---
+<section class="flex flex-col justify-between items-center gap-10 lg:grid lg:grid-cols-2">
+    <div class="max-w-[39rem] flex flex-col items-center lg:items-start">
+        <h2 class="text-4xl font-semibold text-primary mb-5 lg:text-5xl">Lorem ipsum</h2>
+        <p class="mb-6 text-center md:text-left">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin pede metus, vulputate nec,
+            fermentum fringilla, vehicula vitae, justo. Etiam dictum tincidunt diam. Nullam at arcu a est sollicitudin euismod.
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin pede metus, vulputate nec,
+            fermentum fringilla, vehicula vitae, justo. Etiam dictum tincidunt diam. Nullam at arcu a est sollicitudin euismod.
+        </p>
+        <div class="flex flex-col gap-y-6 gap-x-10 mb-10 font-manrope sm:flex-row sm:items-center">
+            <span class="flex flex-col items-center gap-2 sm:flex-row">
+                <strong class="text-2xl font-bold">20+</strong> let zkušeností
+            </span>
+            <span class="flex flex-col items-center gap-2 sm:flex-row">
+                <strong class="text-2xl font-bold">50+</strong> spokojených klientů
+            </span>
+        </div>
+        <Button href="/services" variant="outline">
+            Více informací
+        </Button>
+    </div>
+    <div>
+        <img src="https://placehold.co/560x549" alt="reference image" loading="lazy" width={560} height={549}>
+    </div>
+</section>

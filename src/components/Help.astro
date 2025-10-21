@@ -1,0 +1,67 @@
+---
+    import Button from "./Button.astro"
+    import TabItem from "./Tabs/TabItem.astro";
+    import TabButton from "./Tabs/TabButton.astro";
+
+    const tabButtonsData = [
+        {
+            id: 1,
+            icon: "icon-hands",
+            text: "Lorem ipsum"
+        },
+        {
+            id: 2,
+            icon: "icon-puzzle",
+            text: "Lorem ipsum"
+        },
+        {
+            id: 3,
+            icon: "icon-dumbbell",
+            text: "Lorem ipsum"
+        },
+        {
+            id: 4,
+            icon: "icon-food",
+            text: "Lorem ipsum"
+        },
+    ];
+
+    const tabItemsData = [
+        {
+            id: 1,
+            text: "Lorem ipsum dolor sit amet consectetur. Eu integer quis amet amet."
+        },
+        {
+            id: 2,
+            text: "Lorem ipsum dolor sit amet consectetur. Eu integer quis amet amet."
+        },
+        {
+            id: 3,
+            text: "Lorem ipsum dolor sit amet consectetur. Eu integer quis amet amet."
+        },
+        {
+            id: 4,
+            text: "Lorem ipsum dolor sit amet consectetur. Eu integer quis amet amet."
+        },
+    ];
+---
+<section class="mb-24">
+    <h2 class="text-4xl font-semibold text-primary text-center mb-10 lg:text-5xl">S čím vám pomůžu?</h2>
+    <div class="flex items-center gap-6 mb-10 overflow-auto lg:justify-center">
+        {tabButtonsData.map((item) => <TabButton name={item.icon}>{item.text}</TabButton>)}
+    </div>
+    <div>
+        <h3 class="text-3xl font-semibold text-primary text-center mb-6 lg:text-4xl">Jak bude probíhat první setkání?</h3>
+        <div class="grid grid-cols-1 gap-6 mb-10 md:grid-cols-2">
+            {tabItemsData.map((item) => <TabItem>{item.text}</TabItem>)}
+        </div>
+        <div class="flex flex-col justify-center items-center gap-6 sm:flex-row">
+            <Button href="/contact" variant="default">
+               Domluvit schůzku
+            </Button>
+            <Button href="/services" variant="outline">
+                Více informací
+            </Button>
+        </div>
+    </div>
+</section>

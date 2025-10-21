@@ -1,0 +1,123 @@
+@import "tailwindcss";
+@layer theme, base, components, utilities;
+
+@theme {
+    --color-primary-light: #547EC1;
+    --color-primary: #133256;
+
+    --color-secondary-light: #A7BCCA;
+    --color-secondary: #273741;
+    --color-secondary-dark: #13262A;
+    --color-secondary-darker: #172026;
+
+    --color-light: #EDF5F7;
+    --color-hover: #1D4E86;
+    --color-body: #F4F5F5;
+
+    --color-neutral-100:  #FBFCFC;
+    --color-neutral-200:  #D0D5D8;
+    --color-neutral-300:  #A7AEB2;
+    --color-neutral-400:  #777C80;
+    --color-neutral-500:  #484E52;
+    --color-neutral-600:  #313538;
+    --color-neutral-700:  #222526;
+    --color-neutral-800:  #171515;
+
+    --font-crimson: "Crimson Pro", serif;
+    --font-manrope: "Manrope",sans-serif;
+}
+
+body {
+    @apply min-h-screen flex flex-col font-medium font-crimson overflow-x-hidden bg-body text-secondary-darker;
+}
+
+@layer components {
+    p {
+        @apply font-manrope;
+    }
+
+    .btn {
+        @apply inline-block w-fit px-6 py-2.5 text-xl text-center leading-snug whitespace-nowrap border border-primary bg-primary text-light transition-colors hover:border-hover hover:bg-hover;
+    }
+
+    .btn:is(.btn-outline) {
+        @apply text-primary bg-transparent hover:border-hover hover:bg-secondary-light/20 hover:text-neutral-800;
+    }
+
+    .btn:is(.btn-full) {
+        @apply w-full;
+    }
+
+    .nav-link {
+        @apply block text-xl font-medium px-3 py-1 whitespace-nowrap text-primary hover:underline;
+    }
+
+    .hamburger-btn {
+        @apply flex flex-col gap-1.5 p-2 rounded-lg justify-center items-center text-primary z-50 cursor-pointer transition-colors hover:text-hover lg:hidden;
+    }
+
+    .hamburger-line {
+        @apply w-6 h-0.5 bg-current transition-all duration-300;
+    }
+
+    .hamburger-btn[aria-expanded="true"] .hamburger-line:nth-child(1) {
+        @apply translate-y-2 rotate-45;
+    }
+
+    .hamburger-btn[aria-expanded="true"] .hamburger-line:nth-child(2) {
+        @apply opacity-0;
+    }
+
+    .hamburger-btn[aria-expanded="true"] .hamburger-line:nth-child(3) {
+        @apply -translate-y-2 -rotate-45;
+    }
+
+    .content-container {
+        @apply relative w-full max-w-[90rem] mx-auto;
+    }
+
+    .mobile-menu {
+        @apply fixed inset-0 pt-8 bg-neutral-100 border-l border-l-neutral-200 z-40 transition-transform duration-300 ease-in-out sm:min-w-xs sm:left-auto sm:pt-0 lg:hidden;
+    }
+
+    .menu-item {
+        @apply block px-5 py-2 text-xl font-medium text-center rounded-lg transition-colors hover:bg-light text-primary sm:text-left;
+    }
+
+    .hero-box {
+        background: linear-gradient(112.91deg, rgba(247, 247, 247, 0.1) 0%, rgba(194, 202, 208, 0.05) 49.82%, rgba(23, 59, 84, 0.05) 134.88%);
+        @apply px-6 py-4 flex rounded-lg flex-col items-center text-center gap-y-6 border border-neutral-100 lg:max-w-[30rem] lg:items-start lg:text-left;
+    }
+
+    .payment-box {
+        background: linear-gradient(92.53deg, rgba(210, 225, 230, 0.5) -1.33%, rgba(133, 162, 181, 0.5) 136.23%);
+        @apply w-fit flex flex-col items-center gap-x-6 px-6 py-3 rounded-lg font-manrope max-sm:mx-auto sm:flex-row;
+    }
+
+    .icon {
+        @apply inline-block size-8 align-middle text-neutral-600;
+    }
+
+    .tab-button {
+        background: linear-gradient(112.91deg, rgba(247, 247, 247, 0.1) 0%, rgba(194, 202, 208, 0.05) 49.82%, rgba(23, 59, 84, 0.05) 134.88%);
+        @apply flex items-center justify-center px-6 py-6 gap-x-6 text-secondary-dark font-manrope font-medium whitespace-nowrap border border-neutral-100 rounded-lg transition-transform cursor-pointer hover:-translate-y-1;
+    }
+
+    .tab-item {
+        background: linear-gradient(112.91deg, rgba(215, 215, 215, 0.25) 0%, rgba(194, 202, 208, 0.125) 49.82%, rgba(23, 59, 84, 0.125) 134.88%);
+        @apply flex items-center gap-x-6 px-6 py-4 text-secondary-dark rounded-lg font-manrope;
+    }
+
+    .footer {
+        background: linear-gradient(180deg, #F4F5F5 4.56%, #C2CAD0 56.71%, #173B54 145.74%);
+        @apply mt-auto pb-10 py-6;
+    }
+
+    .footer-pattern {
+        @apply w-10 h-auto sm:w-14;
+    }
+
+    .footer-link {
+        @apply inline-block align-middle text-primary size-10 transition-colors hover:text-hover;
+    }
+}

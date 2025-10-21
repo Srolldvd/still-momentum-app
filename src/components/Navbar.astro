@@ -1,0 +1,47 @@
+---
+import Button from "./Button.astro"
+import Menu from "./Menu.astro"
+---
+
+<header class="fixed top-0 inset-x-0 bg-body z-40">
+    <div class="content-container flex items-center justify-between py-4 gap-x-4 px-4 sm:px-6 lg:px-12 xl:px-20">
+        <a href="/" class="relative z-50" aria-label="Still Momentum logo">
+            <img src="/logo.png" alt="logo" class="w-full max-w-44" width={176} height={41} fetchpriority="high" loading="eager">
+        </a>
+        <nav class="hidden lg:block">
+            <ul class="flex items-center gap-x-4 xl:gap-x-8">
+                <li>
+                    <a href="/services" class="nav-link">Služby &amp; ceník</a>
+                </li>
+                <li>
+                    <a href="/about" class="nav-link">O mně</a>
+                </li>
+                <li>
+                    <a href="/blog" class="nav-link">Blog</a>
+                </li>
+                <li>
+                    <a href="/contact" class="nav-link">Kontakt</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="hidden lg:flex lg:gap-x-4">
+            <Button href="/services" variant="outline">
+                Symptom checker
+            </Button>
+            <Button href="/contact" variant="default">
+                Úvodní schůzka
+            </Button>
+        </div>
+        <button
+                id="hamburger"
+                class="hamburger-btn"
+                aria-label="Toggle menu"
+                aria-expanded="false" aria-controls="mobile-menu"
+        >
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+    </div>
+    <Menu></Menu>
+</header>

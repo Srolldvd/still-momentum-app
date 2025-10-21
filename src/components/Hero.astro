@@ -1,0 +1,33 @@
+---
+import Button from "./Button.astro"
+import Icon from "./Icon.astro"
+---
+<section class="flex flex-col justify-between items-center gap-10 mb-14 lg:grid lg:grid-cols-2">
+    <div class="lg:shrink-0">
+        <div class="mb-10 text-center lg:text-left lg:px-6 lg:mb-0">
+            <strong class="block font-medium text-xl mb-5 sm:text-2xl">Prnví specialista na menopauzu v ČR</strong>
+            <h1 class="text-5xl font-semibold text-primary mb-4 lg:text-6xl">Hero Title</h1>
+        </div>
+        <div class="hero-box">
+            <p class="text-lg text-secondary">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                Proin pede metus, vulputate nec, fermentum fringilla, vehicula vitae.Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+            </p>
+            <div class="payment-box">
+                <Icon name="icon-payment" class="size-12 sm:size-8"></Icon>
+                <span class="font-semibold text-xl">Úvodní konzultace zdarma</span>
+            </div>
+            <div class="flex flex-col w-full gap-6 sm:flex-row">
+                <Button href="/services" variant="outline" class="btn-full">
+                    Symptom checker
+                </Button>
+                <Button href="/contact" variant="default" class="btn-full">
+                    Úvodní schůzka
+                </Button>
+            </div>
+        </div>
+    </div>
+    <div>
+        <img src="https://placehold.co/636x488" alt="hero image" width={636} height={488} fetchpriority="high" loading="eager">
+    </div>
+</section>

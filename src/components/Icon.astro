@@ -1,0 +1,22 @@
+---
+const { name, class: className = '', size = 24 } = Astro.props;
+const icons = import.meta.glob('/src/assets/icons/*.svg', {
+    eager: true,
+    as: 'raw'
+});
+
+// Získání správné ikony
+const iconPath = `/src/assets/icons/${name}.svg`;
+const iconContent = icons[iconPath] as string;
+
+if (!iconContent) {
+    console.warn(`Ikona "${name}" nebyla nalezena v /src/assets/icons/`);
+}
+
+// Parsování SVG a přidání vlastních atributů
+const svgWithProps = iconContent
+    ?.replace('<svg', `<svg class="icon ${className}" width="${size}" height="${size}"`)
+    ?.replace(/\s(width|height)="[^"]*"/g, ''); // Odstranění původních width/height
+---
+
+<Fragment set:html={svgWithProps} />
