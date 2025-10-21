@@ -49,7 +49,7 @@ body {
     }
 
     .nav-link {
-        @apply block text-xl font-medium px-3 py-1 whitespace-nowrap text-primary hover:underline;
+        @apply block text-xl px-3 py-1 whitespace-nowrap text-primary hover:underline;
     }
 
     .hamburger-btn {
@@ -81,7 +81,7 @@ body {
     }
 
     .menu-item {
-        @apply block px-5 py-2 text-xl font-medium text-center rounded-lg transition-colors hover:bg-light text-primary sm:text-left;
+        @apply block px-5 py-2 text-xl text-center rounded-lg transition-colors hover:bg-light text-primary sm:text-left;
     }
 
     .hero-box {
@@ -100,7 +100,7 @@ body {
 
     .tab-button {
         background: linear-gradient(112.91deg, rgba(247, 247, 247, 0.1) 0%, rgba(194, 202, 208, 0.05) 49.82%, rgba(23, 59, 84, 0.05) 134.88%);
-        @apply flex items-center justify-center px-6 py-6 gap-x-6 text-secondary-dark font-manrope font-medium whitespace-nowrap border border-neutral-100 rounded-lg transition-transform cursor-pointer hover:-translate-y-1;
+        @apply flex items-center justify-center px-6 py-6 gap-x-6 text-secondary-dark font-manrope whitespace-nowrap border border-neutral-100 rounded-lg transition-transform cursor-pointer hover:-translate-y-1;
     }
 
     .tab-item {
